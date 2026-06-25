@@ -98,6 +98,100 @@ footer { background:#111827; padding:24px 48px; display:flex; justify-content:sp
 .footer-links { display:flex; gap:20px; }
 .footer-links a { font-size:13px; color:#556677; text-decoration:none; }
 .footer-copy { font-size:12px; color:#445566; }
+.maisons-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+    gap:24px;
+}
+
+.maison-card{
+    background:#fff;
+    border-radius:18px;
+    overflow:hidden;
+    border:1px solid #d6e8f5;
+    box-shadow:0 8px 25px rgba(0,0,0,.06);
+    transition:.3s;
+}
+
+.maison-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 15px 35px rgba(0,0,0,.12);
+}
+
+.maison-img{
+    height:240px;
+    position:relative;
+    overflow:hidden;
+}
+
+.maison-img img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.4s;
+}
+
+.maison-card:hover .maison-img img{
+    transform:scale(1.08);
+}
+
+.tag{
+    position:absolute;
+    top:14px;
+    right:14px;
+    padding:8px 14px;
+    border-radius:30px;
+    color:white;
+    font-size:12px;
+    font-weight:600;
+}
+
+.tag.vente{
+    background:#2a8fd4;
+}
+
+.tag.loc{
+    background:#27ae60;
+}
+
+.maison-body{
+    padding:22px;
+}
+
+.maison-title{
+    font-size:20px;
+    font-weight:600;
+    margin-bottom:10px;
+}
+
+.maison-loc{
+    color:#7a9ab0;
+    font-size:14px;
+    margin-bottom:15px;
+    display:flex;
+    align-items:center;
+    gap:6px;
+}
+
+.maison-feats{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-bottom:18px;
+}
+
+.maison-feats span{
+    background:#edf5fb;
+    padding:6px 10px;
+    border-radius:8px;
+    font-size:13px;
+}
+
+.maison-price{
+    font-size:24px;
+    font-weight:700;
+    color:#2a8fd4;
+}
 </style>
 </head>
 <body>
