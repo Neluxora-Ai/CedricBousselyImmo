@@ -200,15 +200,53 @@ footer { background:#111827; padding:24px 48px; display:flex; justify-content:sp
     <span class="see-all">Voir tous les biens →</span>
   </div>
 
-  <div class="search-row">
-    <div class="search-wrap">
-      <svg width="16" height="16" fill="none" stroke="#aac" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-      <input placeholder="Ville, quartier, code postal…" />
-    </div>
-    <button class="filter-btn active">Tous</button>
-    <button class="filter-btn inactive">À vendre</button>
-    <button class="filter-btn inactive">À louer</button>
+ <div class="search-block">
+  <div class="search-type-row">
+    <button class="type-btn active" onclick="setType(this,'tous')">Tous</button>
+    <button class="type-btn inactive" onclick="setType(this,'vente')">À vendre</button>
+    <button class="type-btn inactive" onclick="setType(this,'location')">À louer</button>
   </div>
+  <div class="search-fields">
+    <div class="field-group">
+      <div class="field-label">📍 Localisation</div>
+      <input class="field-input" id="f-loc" placeholder="Ville, quartier…" oninput="filterCards()" />
+    </div>
+    <div class="field-group">
+      <div class="field-label">🛏 Pièces min</div>
+      <select class="field-select" id="f-pieces" onchange="filterCards()">
+        <option value="">Toutes</option>
+        <option value="1">1+</option>
+        <option value="2">2+</option>
+        <option value="3">3+</option>
+        <option value="4">4+</option>
+        <option value="5">5+</option>
+      </select>
+    </div>
+    <div class="field-group">
+      <div class="field-label">📐 Surface min</div>
+      <select class="field-select" id="f-surface" onchange="filterCards()">
+        <option value="">Toutes</option>
+        <option value="50">50 m²</option>
+        <option value="80">80 m²</option>
+        <option value="100">100 m²</option>
+        <option value="120">120 m²</option>
+        <option value="150">150 m²</option>
+      </select>
+    </div>
+    <div class="field-group">
+      <div class="field-label">💰 Budget max</div>
+      <select class="field-select" id="f-budget" onchange="filterCards()">
+        <option value="">Sans limite</option>
+        <option value="200000">200 000 €</option>
+        <option value="350000">350 000 €</option>
+        <option value="500000">500 000 €</option>
+        <option value="2000">2 000 € /mois</option>
+      </select>
+    </div>
+    <button class="search-btn" onclick="resetFilters()">Réinitialiser</button>
+  </div>
+</div>
+<div class="results-count" id="results-count"></div>
 
   <div class="maisons-grid">
     <div class="maison-card">
