@@ -69,34 +69,19 @@ nav { background:#fff; border-bottom:1px solid #d6e8f5; padding:0 48px; display:
 .section-title { font-family:'Playfair Display',serif; font-size:26px; font-weight:600; color:#1a1a2e; }
 .see-all { font-size:14px; color:#2a8fd4; font-weight:500; cursor:pointer; }
 
-/* SEARCH BAR */
-.search-row { display:flex; gap:10px; margin-bottom:24px; align-items:center; }
-.search-wrap { flex:1; background:#fff; border:1px solid #d6e8f5; border-radius:10px; padding:8px 14px; display:flex; align-items:center; gap:10px; }
-.search-wrap input { border:none; outline:none; font-size:14px; color:#1a1a2e; flex:1; font-family:'Inter',sans-serif; background:transparent; }
-.search-wrap input::placeholder { color:#aac; }
-.filter-btn { padding:10px 18px; border-radius:10px; font-size:14px; font-weight:500; cursor:pointer; }
-.filter-btn.active { background:#2a8fd4; color:#fff; border:none; }
-.filter-btn.inactive { background:#fff; color:#555; border:1px solid #d6e8f5; }
-
-.maisons-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
-.maison-card { background:#fff; border-radius:14px; border:1px solid #d6e8f5; overflow:hidden; cursor:pointer; transition:transform 0.15s, box-shadow 0.15s; }
-.maison-card:hover { transform:translateY(-3px); box-shadow:0 10px 28px rgba(42,143,212,0.12); }
-.maison-img { height:170px; display:flex; align-items:center; justify-content:center; font-size:48px; position:relative; }
-.maison-img.h1 { background:linear-gradient(135deg,#dff0fc,#b8dcf5); }
-.maison-img.h2 { background:linear-gradient(135deg,#deedf8,#c5dff0); }
-.maison-img.h3 { background:linear-gradient(135deg,#e8f4fb,#cce6f7); }
-.maison-img.h4 { background:linear-gradient(135deg,#d5ecf9,#b0d4ed); }
-.maison-img.h5 { background:linear-gradient(135deg,#e0f1fd,#bcd9ef); }
-.maison-img.h6 { background:linear-gradient(135deg,#daeefb,#c0e0f4); }
-.tag { position:absolute; top:10px; left:10px; padding:4px 10px; border-radius:6px; font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:0.5px; }
-.tag.vente { background:#fff; color:#2a8fd4; }
-.tag.loc { background:#fff; color:#e08a20; }
-.maison-body { padding:16px; }
-.maison-title { font-size:15px; font-weight:600; color:#1a1a2e; margin-bottom:4px; }
-.maison-loc { font-size:13px; color:#7a9ab0; margin-bottom:10px; display:flex; align-items:center; gap:4px; }
-.maison-feats { display:flex; gap:14px; font-size:12px; color:#7a9ab0; margin-bottom:12px; }
-.maison-price { font-size:19px; font-weight:700; color:#2a8fd4; }
-
+/* SEARCH BAR AVANCÉE */
+.search-block { background:#fff; border:1px solid #d6e8f5; border-radius:16px; padding:20px 24px; margin-bottom:24px; box-shadow:0 4px 16px rgba(42,143,212,0.07); }
+.search-type-row { display:flex; gap:8px; margin-bottom:16px; }
+.type-btn { padding:8px 18px; border-radius:8px; font-size:13px; font-weight:600; cursor:pointer; border:none; transition:all 0.15s; }
+.type-btn.active { background:#2a8fd4; color:#fff; }
+.type-btn.inactive { background:#f0f6fc; color:#557; border:1px solid #d6e8f5; }
+.search-fields { display:grid; grid-template-columns:2fr 1fr 1fr 1fr auto; gap:10px; align-items:end; }
+.field-group { display:flex; flex-direction:column; gap:5px; }
+.field-label { font-size:11px; font-weight:600; color:#7a9ab0; text-transform:uppercase; letter-spacing:0.8px; }
+.field-input, .field-select { background:#f4f8fc; border:1px solid #d6e8f5; border-radius:9px; padding:9px 12px; font-size:14px; color:#1a1a2e; font-family:'Inter',sans-serif; outline:none; width:100%; }
+.field-input:focus, .field-select:focus { border-color:#2a8fd4; background:#fff; }
+.search-btn { padding:10px 22px; background:#2a8fd4; color:#fff; border:none; border-radius:9px; font-size:14px; font-weight:600; cursor:pointer; height:40px; }
+.results-count { font-size:13px; color:#7a9ab0; margin-bottom:16px; }
 /* CONTACT */
 .contact-band { background:#1a1a2e; margin:0 48px 40px; border-radius:16px; padding:36px 40px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
 .contact-text .ct-title { font-family:'Playfair Display',serif; font-size:22px; color:#fff; margin-bottom:6px; }
