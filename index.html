@@ -332,6 +332,56 @@ footer { background:#111827; padding:24px 48px; display:flex; justify-content:sp
   </div>
   <div class="footer-copy">© 2026 CedricBousselyImmobilier</div>
 </footer>
+<script>
+let activeType = 'tous';
 
+function setType(btn, type) {
+  activeType = type;
+  document.querySelectorAll('.type-btn').forEach(b => { b.className = 'type-btn inactive'; });
+  btn.className = 'type-btn active';
+  filterCards();
+}
+
+function filterCards() {
+  const loc = document.getElementById('f-loc').value.toLowerCase();
+  const pieces = parseInt(document.getElementById('f-pieces').value) || 0;
+  const surface = parseInt(document.getElementById('f-surface').value) || 0;
+  const budget = parseInt(document.getElementById('f-budget').value) || 0;
+
+  let visible = 0;
+  document.querySelectorAll('.maison-card').forEach(card => {
+    const type = card.dataset.type;
+    const p = parseInt(card.dataset.pieces);
+    const s = parseInt(card.dataset.surface);
+    const prix = parseInt(card.dataset.prix);
+    const text = card.innerText.toLowerCase();
+
+    const okType = activeType === 'tous' || type === activeType;
+    const okLoc = !loc || text.includes(loc);
+    const okPieces = !pieces || p >= pieces;
+    const okSurface = !surface || s >= surface;
+    const okBudget = !budget || prix <= budget;
+
+    const show = okType && okLoc && okPieces && okSurface && okBudget;
+    card.style.display = show ? '' : 'none';
+    if (show) visible++;
+  });
+
+  document.getElementById('results-count').textContent =
+    visible === 0 ? 'Aucun bien ne correspond à votre recherche.'
+    : visible + ' bien' + (visible > 1 ? 's' : '') + ' trouvé' + (visible > 1 ? 's' : '');
+}
+
+function resetFilters() {
+  document.getElementById('f-loc').value = '';
+  document.getElementById('f-pieces').value = '';
+  document.getElementById('f-surface').value = '';
+  document.getElementById('f-budget').value = '';
+  activeType = 'tous';
+  document.querySelectorAll('.type-btn').forEach((b, i) => { b.className = i === 0 ? 'type-btn active' : 'type-btn inactive'; });
+  document.querySelectorAll('.maison-card').forEach(c => c.style.display = '');
+  document.getElementById('results-count').textContent = '';
+}
+</script>
 </body>
 </html>
