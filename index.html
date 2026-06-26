@@ -520,5 +520,60 @@ function resetFilters() {
   document.getElementById('results-count').textContent = '';
 }
 </script>
+<!-- ================= FICHE BIEN ================= -->
+
+<div id="propertyModal" class="modal">
+
+    <div class="modal-content">
+
+        <span class="close-modal">&times;</span>
+
+        <div class="gallery">
+
+            <button class="gallery-btn left">&#10094;</button>
+
+            <img id="mainImage" src="" alt="">
+
+            <button class="gallery-btn right">&#10095;</button>
+
+        </div>
+
+        <div id="thumbnails" class="thumbnails"></div>
+
+        <div class="property-content">
+
+            <h2 id="propertyTitle"></h2>
+
+            <div class="property-price" id="propertyPrice"></div>
+
+            <div class="property-info">
+
+                <span id="propertyLocation"></span>
+
+                <span id="propertySurface"></span>
+
+                <span id="propertyRooms"></span>
+
+            </div>
+
+            <p id="propertyDescription"></p>
+
+            <div class="modal-buttons">
+
+                <button class="contact-btn">
+                    📞 Contacter l'agence
+                </button>
+
+                <button class="visit-btn">
+                    📅 Demander une visite
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
 </body>
 </html>
