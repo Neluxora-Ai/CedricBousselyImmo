@@ -764,6 +764,121 @@ function resetFilters() {
   document.querySelectorAll('.maison-card').forEach(c => c.style.display = '');
   document.getElementById('results-count').textContent = '';
 }
+
+const biens={
+
+0:{
+title:"Maison familiale avec jardin",
+price:"420 000 €",
+location:"📍 Castres",
+surface:"📐 145 m²",
+rooms:"🛏 5 pièces",
+
+description:"Magnifique maison familiale avec un grand jardin arboré, une cuisine ouverte, un vaste séjour lumineux, une terrasse et un garage double.",
+
+images:[
+
+"https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=1400",
+
+"https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1400",
+
+"https://images.unsplash.com/photo-1576941089067-2de3c901e126?w=1400"
+
+]
+
+}
+
+};
+
+let currentImages=[];
+
+let currentIndex=0;
+
+const modal=document.getElementById("propertyModal");
+
+const main=document.getElementById("mainImage");
+
+const thumbs=document.getElementById("thumbnails");
+
+function openProperty(id){
+
+const b=biens[id];
+
+currentImages=b.images;
+
+currentIndex=0;
+
+main.src=currentImages[0];
+
+document.getElementById("propertyTitle").innerHTML=b.title;
+
+document.getElementById("propertyPrice").innerHTML=b.price;
+
+document.getElementById("propertyLocation").innerHTML=b.location;
+
+document.getElementById("propertySurface").innerHTML=b.surface;
+
+document.getElementById("propertyRooms").innerHTML=b.rooms;
+
+document.getElementById("propertyDescription").innerHTML=b.description;
+
+thumbs.innerHTML="";
+
+b.images.forEach((img,index)=>{
+
+let i=document.createElement("img");
+
+i.src=img;
+
+i.onclick=()=>{
+
+currentIndex=index;
+
+main.src=currentImages[currentIndex];
+
+};
+
+thumbs.appendChild(i);
+
+});
+
+modal.style.display="flex";
+
+}
+
+document.querySelector(".left").onclick=()=>{
+
+currentIndex--;
+
+if(currentIndex<0) currentIndex=currentImages.length-1;
+
+main.src=currentImages[currentIndex];
+
+}
+
+document.querySelector(".right").onclick=()=>{
+
+currentIndex++;
+
+if(currentIndex>=currentImages.length) currentIndex=0;
+
+main.src=currentImages[currentIndex];
+
+}
+
+document.querySelector(".close-modal").onclick=()=>{
+
+modal.style.display="none";
+
+}
+
+window.onclick=(e)=>{
+
+if(e.target==modal)
+
+modal.style.display="none";
+
+}
 </script>
 <!-- ================= FICHE BIEN ================= -->
 
