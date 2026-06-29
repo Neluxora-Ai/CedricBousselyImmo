@@ -43,3 +43,52 @@ header{flex-direction:column}
 .hero h1{font-size:36px}
 .gallery{height:280px}
 }
+/* ===========================
+   BARRE DE RECHERCHE
+=========================== */
+
+.search-container{
+
+display:flex;
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+gap:15px;
+
+margin:40px 0;
+
+}
+
+.search-container input,
+.search-container select{
+
+padding:15px 18px;
+
+border:none;
+
+border-radius:12px;
+
+background:white;
+
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+font-size:15px;
+
+min-width:180px;
+
+transition:.3s;
+
+}
+
+.search-container input:focus,
+.search-container select:focus{
+
+outline:none;
+
+box-shadow:0 0 0 3px #2a8fd4;
+
+transform:translateY(-2px);
+
+}
