@@ -564,3 +564,10 @@ window.addEventListener("load",()=>{
     afficherBiens();
 
 });
+const btnRecherche = document.getElementById("btnRecherche");
+
+if (btnRecherche) {
+    btnRecherche.addEventListener("click", () => {
+        filtrerBiens();
+    });
+}
