@@ -25,7 +25,7 @@ function afficherBiens(liste = biens) {
 
         card.innerHTML = `
             <div class="maison-img">
-                <img src="${bien.images[0]}" alt="${bien.titre}">
+                <img src="${bien.images?.[0] || 'https://picsum.photos/600/400'}" alt="${bien.titre}">
                 <span class="tag">${bien.type}</span>
             </div>
 
@@ -85,7 +85,7 @@ function ouvrirBien(id) {
 
             <img
                 class="modal-image"
-                src="${currentProperty.images[0]}"
+                src="${currentProperty.images?.[0] || 'https://picsum.photos/900/500'}"
                 alt="${currentProperty.titre}">
 
             <div class="property-content">
