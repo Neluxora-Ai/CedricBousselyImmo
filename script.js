@@ -105,9 +105,13 @@ function ouvrirBien(id){
 
 function afficherModal(){
 
-    modal.style.display = "flex";
+   modal.style.display = "flex";
 
-    modal.innerHTML = `
+modal.innerHTML = `...`;
+
+gestionModal();
+
+mettreMiniatureActive(); `
 
 <div class="modal-content">
 
